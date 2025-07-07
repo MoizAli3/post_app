@@ -5,7 +5,7 @@ import { upload } from "../../controller/post/createPost.js";
 const postRoute = express.Router();
 
 
-postRoute.post("/create-post", upload.single("images"), createPost);
+postRoute.post("/create-post", upload , createPost);
 
 
 export default postRoute;
