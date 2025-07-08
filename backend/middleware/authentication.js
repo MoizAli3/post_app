@@ -14,11 +14,7 @@ const authMiddleware = async (req, res, next) => {
 
     if (tokenDecode) {
       req.userId = tokenDecode.userId; // safer than modifying req.body
-
-      console.log(req.userId);
     
-
-
       next();
     } else {
       return res
