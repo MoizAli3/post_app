@@ -27,7 +27,7 @@ export const upload = multer({ storage: storage }).array("images", 12);
 // Joi validation schema
 const postValidationSchema = joi.object({
   userId: joi.string().required(),
-  content: joi.string().min(1).max(100).required(),
+  content: joi.string().min(1).max(255).required(),
 });
 
 export const createPost = async (req, res) => {
