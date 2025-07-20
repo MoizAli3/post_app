@@ -1,9 +1,10 @@
 import React from "react";
 import { TbMessage } from "react-icons/tb";
+import { avater } from "../costant/constant";
+
 
 function ChatProfile() {
-  const avater =
-    "https://static.vecteezy.com/system/resources/previews/024/183/525/non_2x/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg";
+
   return (
     <div className="flex justify-between items-center hover:bg-pink-100 px-1 rounded-lg">
       <div className="flex items-center py-0.5">

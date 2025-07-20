@@ -2,13 +2,14 @@ import React from "react";
 import { CiSearch, CiHeart, CiChat1 } from "react-icons/ci";
 import { PiShareFatLight } from "react-icons/pi";
 import { TbLocationShare } from "react-icons/tb";
+import { avater } from "../costant/constant";
+
 
 function Post() {
-  const avater =
-    "https://static.vecteezy.com/system/resources/previews/024/183/525/non_2x/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg";
+
   return (
     <>
-      <div class="relative w-90 md:w-2xl flex flex-col my-6 py-3 bg-white shadow-sm border border-slate-200 rounded-lg ">
+      <div class="relative w-90  md:w-2xl flex flex-col my-6 py-3 bg-white shadow-sm border border-slate-200 rounded-lg ">
         <div>
           <div className="flex items-center gap-4 mx-3">
             <img className="w-10 h-10 rounded-full" src={avater} alt="" />
@@ -95,11 +96,11 @@ function Post() {
             <img className="w-10 h-10 rounded-full" src={avater} alt="" />
           </div>
           <div className="font-medium">
-            <form className="mx-auto  md:w-xl flex items-center gap-3">
+            <form className="mx-auto md:w-xl flex items-center gap-3">
               <input
                 type="search"
                 id="default-search"
-                className="block w-full p-3 py-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-pink-400 focus:border-pink-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-56  md:w-full p-3 py-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-pink-400 focus:border-pink-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Write a Comment...."
                 required=""
               />

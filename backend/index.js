@@ -10,6 +10,14 @@ const app = express();
 const port = process.env.PORT || 3000;
 connectMongoDb(process.env.DATABASE_URI);
 
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Specify the exact frontend origin
+    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+  })
+);
+
+app.options("/*splat", cors());
 
 app.use(cookieParser());
 app.use(express.json());

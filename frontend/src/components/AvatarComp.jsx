@@ -1,7 +1,6 @@
+import { avater } from "../costant/constant";
 
-function AvatarComp({name}) {
-  const avater =
-    "https://static.vecteezy.com/system/resources/previews/024/183/525/non_2x/avatar-of-a-man-portrait-of-a-young-guy-illustration-of-male-character-in-modern-color-style-vector.jpg";
+function AvatarComp({ name }) {
   return (
     <div className="flex flex-col items-center">
       <img
