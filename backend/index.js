@@ -12,7 +12,7 @@ connectMongoDb(process.env.DATABASE_URI);
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Specify the exact frontend origin
+    origin: ["http://localhost:5173", "http://localhost:5174"], // Specify the exact frontend origin
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   })
 );

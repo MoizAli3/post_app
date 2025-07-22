@@ -37,14 +37,20 @@ export const loginUser = async (req, res) => {
     const token = jwt.sign(
       { userId: existedUser._id, email: existedUser.email },
       process.env.JWT_SECRET_KEY,
-      { expiresIn: "1h" }
+      { expiresIn: "1d" }
     );
 
-    return res.status(200).cookie("token", token).send({
-      status: 200,
-      message: "Login successful",
-      data: existedUser,
-    });
+    return res
+      .status(200)
+      .cookie("token", token , {
+        httpOnly: true,
+        Credentials: true
+      })
+      .send({
+        status: 200,
+        message: "Login successful",
+        data: existedUser,
+      });
   } catch (error) {
     return res.status(500).send({ status: 500, message: error.message });
   }

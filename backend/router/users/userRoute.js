@@ -5,8 +5,8 @@ import {
   sentForgetPassOtp,
   verifyForgetPassOtp,
   logoutUser,
+  stayLoginUser,
 } from "../../controller/users/index.js";
-import { stayLoginUser } from "../../controller/users/stayLogin.js";
 
 const userRoute = express.Router();
 

@@ -3,11 +3,15 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import UserContextProvider from "./context/UserContextProvider.jsx";
+import "@mantine/core/styles.css";
+import { MantineProvider } from "@mantine/core";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <UserContextProvider>
-      <App />
-    </UserContextProvider>
-  </BrowserRouter>
+  <MantineProvider>
+    <BrowserRouter>
+      <UserContextProvider>
+        <App />
+      </UserContextProvider>
+    </BrowserRouter>
+  </MantineProvider>
 );

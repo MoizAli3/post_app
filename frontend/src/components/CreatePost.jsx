@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { useDropzone } from "react-dropzone";
 import { avater } from "../costant/constant";
 
-
 function CreatePost() {
   const [state, setState] = useState([]);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -53,23 +52,20 @@ function CreatePost() {
     console.log(formData);
   };
 
-
   return (
     <>
-      <div className="font-medium w-full dark:text-white">
-        <form className="mx-auto">
-          <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <CiSearch style={{ fontSize: "1.2rem", color: "gray" }} />
-          </div>
-          <input
-            type="search"
-            id="default-search"
-            className="block w-72 md:w-xl p-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-pink-400 focus:border-pink-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Search Something here...."
-            required=""
-          />
-        </form>
-      </div>
+      <form className="mx-auto mt-4">
+        <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+          <CiSearch style={{ fontSize: "1.2rem", color: "gray" }} />
+        </div>
+        <input
+          type="search"
+          id="default-search"
+          className="block w-91 md:w-2xl p-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-pink-400 focus:border-pink-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Search Something here...."
+          required=""
+        />
+      </form>
       <form className="mx-auto" onSubmit={handleSubmit(onSubmit)}>
         <div className="relative flex flex-col w-90 md:w-2xl my-6 py-2 bg-white shadow-sm border border-slate-200 rounded-lg">
           <div className="relative m-2.5 overflow-hidden text-white rounded-md">

@@ -9,7 +9,7 @@ export default function SideBar({ children }) {
   return (
     <>
       <LeftSideBar />
-      <div className="p-4 sm:ml-64 bg-gray-100">{children}</div>
+      <div className="flex flex-col items-center">{children}</div>
       <RightSideBar />
     </>
   );

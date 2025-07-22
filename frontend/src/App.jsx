@@ -6,24 +6,29 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import ForgetPass from "./pages/ForgetPass";
 import VerifyForgetPass from "./pages/VerifyForgetPass";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import UserContext from "./context/UserContext";
-import Cookies from "js-cookie";
-import { useEffect } from "react";
-// import { baseURL } from "../costant/constant";
-// import axios from "axios";
+import axios from "axios";
+import { baseURL } from "./costant/constant";
 
 function App() {
   const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
-  const token = Cookies.get("token");
 
   useEffect(() => {
-    if (token) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
-    }
-  }, [token, setIsLoggedIn]);
+    axios
+      .post(`${baseURL}v1/users/stay-login`, {}, { withCredentials: true })
+      .then((response) => {
+        if (response.status === 200) {
+          setIsLoggedIn(true);
+        } else {
+          setIsLoggedIn(false);
+        }
+      })
+      .catch((error) => {
+        console.error("Error during stay login:", error);
+        setIsLoggedIn(false);
+      });
+  }, []);
 
   return (
     <>

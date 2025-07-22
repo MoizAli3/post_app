@@ -3,6 +3,8 @@ import { loginUser } from "./login.js";
 import { sentForgetPassOtp } from "./sentforgetpass.js";
 import { verifyForgetPassOtp } from "./verifyforgetpass.js";
 import {logoutUser} from "./logout.js"
+import { stayLoginUser } from "./staylogin.js";
+
 
 
 
@@ -13,4 +15,5 @@ export {
   sentForgetPassOtp,
   verifyForgetPassOtp,
   logoutUser,
+  stayLoginUser
 };

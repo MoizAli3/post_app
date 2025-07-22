@@ -1,15 +1,27 @@
-export const stayLoginUser = async (req, res) => {
-  const token = req.cookies.token;
+import "dotenv/config";
+import jwt from "jsonwebtoken";
 
+export const stayLoginUser = async (req, res) => {
   try {
+    const token = req.cookies.token;
+
     if (!token) {
-      res.send({
-        status: 200,
+      return res.status(403).send({
+        status: 403,
         message: "User Loggout",
       });
     }
-    res.status(200).cookie("token", token).send({
-      status: 200,
+
+    const exitsToken = jwt.verify(token, process.env.JWT_SECRET_KEY);
+
+    if (!exitsToken) {
+      return res.status(403).send({
+        status: 403,
+        message: "User Loggout",
+      });
+    }
+
+    return res.status(200).send({
       message: "Stay Login successful",
     });
   } catch (error) {
