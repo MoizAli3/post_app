@@ -7,7 +7,7 @@ import { AppShell, Burger, NavLink } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
 function RightSideBar() {
-  const [opened, { toggle }] = useDisclosure();
+  const [, { toggle }] = useDisclosure();
   return (
     <>
       {/* <button
@@ -30,24 +30,23 @@ function RightSideBar() {
       <AppShell
         padding="md"
         header={{ height: 60 }}
+        transitionDuration={500}
+        transitionTimingFunction="ease"
         navbar={{
           width: 300,
           breakpoint: "sm",
-          collapsed: { mobile: !opened },
+          // collapsed: { mobile: !opened },
         }}
       >
-        <AppShell.Header>
-          <Burger
-            opened={opened}
-            onClick={toggle}
-            hiddenFrom="sm"
-            size="sm"
-            className="m-3 fixed right-2 top-0 lg:hidden" 
+        <Burger
+          // opened={opened}
+          onClick={toggle}
+          hiddenFrom="sm"
+          size="sm"
+          className="m-3 fixed right-2 top-0 lg:hidden"
+        />
 
-          />
-        </AppShell.Header>
-
-        <AppShell.Aside className="space-y-2">
+        <AppShell.Aside className="space-y-2 translate-x-80 md:translate-x-0 px-5 py-2">
           <div className="flex justify-end mr-2 items-center gap-4">
             <div className="font-medium dark:text-white">
               <div>Jese Leos</div>

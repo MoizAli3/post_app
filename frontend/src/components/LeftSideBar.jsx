@@ -23,7 +23,7 @@ function LeftSideBar() {
           collapsed: { mobile: !opened },
         }}
       >
-        <AppShell.Header>
+        <AppShell.Header >
           <Burger
             opened={opened}
             onClick={toggle}

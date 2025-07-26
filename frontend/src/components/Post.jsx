@@ -9,7 +9,8 @@ function Post() {
 
   return (
     <>
-      <div class="relative w-90  md:w-2xl flex flex-col my-6 py-3 bg-white shadow-sm border border-slate-200 rounded-lg ">
+
+      <div class="relative w-90  md:w-2xl flex flex-col py-3 bg-white shadow-sm border border-slate-200 rounded-lg ">
         <div>
           <div className="flex items-center gap-4 mx-3">
             <img className="w-10 h-10 rounded-full" src={avater} alt="" />
@@ -25,7 +26,7 @@ function Post() {
           <img
             src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
             alt="card-image"
-          />
+            />
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="flex items-center text-gray-500 gap-1 justify-start ms-5">
@@ -35,22 +36,22 @@ function Post() {
                   className="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
                   src={avater}
                   alt=""
-                />
+                  />
                 <img
                   className="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
                   src={avater}
                   alt=""
-                />
+                  />
                 <img
                   className="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
                   src={avater}
                   alt=""
-                />
+                  />
                 <img
                   className="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
                   src={avater}
                   alt=""
-                />
+                  />
               </div>
             </div>
           </div>
@@ -83,7 +84,7 @@ function Post() {
                 <div>
                   <PiShareFatLight
                     style={{ fontSize: "1.5rem", color: "gray" }}
-                  />
+                    />
                 </div>
                 <div className="text-md">Share</div>
               </div>
@@ -107,7 +108,7 @@ function Post() {
               <button className="bg-pink-100 rounded-lg p-3">
                 <TbLocationShare
                   style={{ color: "#E75480", fontSize: "1rem" }}
-                />
+                  />
               </button>
             </form>
           </div>

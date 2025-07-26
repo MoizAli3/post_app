@@ -4,10 +4,11 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import UserContextProvider from "./context/UserContextProvider.jsx";
 import "@mantine/core/styles.css";
-import { MantineProvider } from "@mantine/core";
+import "@mantine/dropzone/styles.css";
+import {  MantineProvider } from "@mantine/core";
 
 createRoot(document.getElementById("root")).render(
-  <MantineProvider>
+  <MantineProvider >
     <BrowserRouter>
       <UserContextProvider>
         <App />

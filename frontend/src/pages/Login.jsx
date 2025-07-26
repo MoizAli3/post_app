@@ -27,7 +27,7 @@ function Login() {
         setIsLoggedIn(true)
       })
       .catch(function (error) {
-        // toast.error();
+        toast.error();
         console.log(error.message);
       });
   };

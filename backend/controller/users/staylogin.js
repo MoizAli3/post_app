@@ -6,7 +6,7 @@ export const stayLoginUser = async (req, res) => {
     const token = req.cookies.token;
 
     if (!token) {
-      return res.status(403).send({
+      return res.status(401).send({
         status: 403,
         message: "User Loggout",
       });

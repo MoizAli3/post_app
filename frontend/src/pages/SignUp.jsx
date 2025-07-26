@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import { baseURL } from "../costant/constant";
+import { ToastContainer, toast } from "react-toastify";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ function SignUp() {
       console.log("username ->", username);
       await axios
         .post(
-          `${baseURL}`,
+          `${baseURL}v1/users/register`,
           { fullname, username, email, password },
           {
             headers: {
@@ -29,22 +30,13 @@ function SignUp() {
           }
         )
         .then(() => {
-          Swal.fire({
-            title: "Congratulations!",
-            text: "You created an account!",
-            icon: "success",
-          });
-          return navigate("/login");
+          toast.success("Successfully created an account!");
+          return navigate("/");
         });
     } catch (error) {
       const errorMessage =
         error.response?.data?.message || "Something went wrong!";
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: errorMessage,
-        footer: '<a href="#">Why do I have this issue?</a>',
-      });
+      toast.error(errorMessage);
       console.error("Error:", error.response?.data || error.message);
     }
   };
@@ -56,6 +48,8 @@ function SignUp() {
 
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
+      <ToastContainer />
+
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <a
           href="#"
